@@ -10,7 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 
     protected WebDriver driver;
-    protected final String BASE_URL = "https://www.saucedemo.com/";
+    protected final String BASE_URL = "https://www.saucedemo.com";
 
   
     @BeforeMethod

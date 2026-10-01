@@ -38,7 +38,7 @@ public class BasePage {
     	return waitVisible(locator).getText();
 
     }
-    protected boolean isDesplayed(By locator) {
+    protected boolean isDisplayed(By locator) {
     	List<WebElement> elements = driver.findElements(locator);
     	return !elements.isEmpty()&& elements.get(0).isDisplayed();
     }
