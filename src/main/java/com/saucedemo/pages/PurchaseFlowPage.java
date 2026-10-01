@@ -9,10 +9,10 @@ public class PurchaseFlowPage extends WorkflowBasepage {
     private By usernameField   = By.id("user-name");
     private By passwordField   = By.id("password");
     private By loginButton     = By.id("login-button");
-    private By errorMessage    = By.cssSelector("[data-test='error']");
-    private By pageTitle       = By.cssSelector("[data-test='title']");
-    private By cartBadge       = By.cssSelector("[data-test='shopping-cart-badge']");
-    private By cartIcon        = By.cssSelector("[data-test='shopping-cart-link']");
+    private By errorMessage    = By.xpath("//h3[@data-test='error']");
+    private By pageTitle       = By.xpath("//span[@class='title']");
+    private By cartBadge       = By.xpath("//span[@class='shopping_cart_badge']");
+    private By cartIcon        = By.xpath("//a[@data-test='shopping-cart-link']");
     private By checkoutButton  = By.id("checkout");
     private By firstNameField  = By.id("first-name");
     private By lastNameField   = By.id("last-name");
