@@ -27,9 +27,7 @@ public class WorkflowBaseTest {
         prefs.put("profile.password_manager_leak_detection", false);
 
         ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("prefs", prefs);
-        options.addArguments("--guest");
-
+       
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get(BASE_URL);
