@@ -9,13 +9,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BasePage {
+public class WorkflowBasepage {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
 
  
-    public BasePage(WebDriver driver) {
+    public WorkflowBasepage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }

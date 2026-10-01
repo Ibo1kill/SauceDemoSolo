@@ -3,7 +3,7 @@ package com.saucedemo.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class PurchaseFlowPage extends BasePage {
+public class PurchaseFlowPage extends WorkflowBasepage {
 
     
     private By usernameField   = By.id("user-name");

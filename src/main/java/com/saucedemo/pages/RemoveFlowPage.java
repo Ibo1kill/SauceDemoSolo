@@ -3,7 +3,7 @@ package com.saucedemo.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class RemoveFlowPage extends BasePage {
+public class RemoveFlowPage extends WorkflowBasepage {
 
   
     private By usernameField          = By.id("user-name");
