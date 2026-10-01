@@ -40,5 +40,6 @@ public class LoginPage extends BasePage {
 	        return isDisplayed(errorMessage);
 	    }
 	    
+	
+		}
 
-}
