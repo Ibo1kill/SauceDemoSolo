@@ -1,0 +1,7 @@
+wrongLogin,standard_user,wrong_pass
+wrongLogin,locked_out_user,secret_sauce
+wrongLogin,,
+validLogin,standard_user,secret_sauce
+wrongCheckout,,,
+wrongCheckout,Test,User,
+validCheckout,Test,User,10115
