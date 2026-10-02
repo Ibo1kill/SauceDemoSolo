@@ -25,66 +25,66 @@ public class RemoveFlowTest extends WorkflowBaseTest {
     }
 
 
-    @Test(priority = 2)
+    @Test(dependsOnMethods = "validLogin")
     public void addBackpack() {
         page.addBackpack();
         assertTrue(page.isCartBadgeDisplayed());
     }
 
-    @Test(priority = 3)
+    @Test(dependsOnMethods = "addBackpack")
     public void addBikeLight() {
         page.addBikeLight();
         assertTrue(page.isCartBadgeDisplayed());
     }
 
-    @Test(priority = 4)
+    @Test(dependsOnMethods = "addBikeLight")
     public void addBoltTShirt() {
         page.addBoltTShirt();
         assertTrue(page.isCartBadgeDisplayed());
     }
 
-    @Test(priority = 5)
+    @Test(dependsOnMethods = "addBoltTShirt")
     public void removeBackpackOnProductsPage() {
         page.removeBackpack();
         assertTrue(page.isAddBackpackButtonDisplayed());
     }
 
-    @Test(priority = 6)
+    @Test(dependsOnMethods = "removeBackpackOnProductsPage")
     public void openCart() {
         page.openCart();
         assertEquals(page.getTitle(), "Your Cart");
     }
 
-    @Test(priority = 7)
+    @Test(dependsOnMethods = "openCart")
     public void removeBikeLightInCart() {
         page.removeBikeLight();
         assertFalse(page.isRemoveBikeLightButtonDisplayed());
     }
 
-    @Test(priority = 8)
+    @Test(dependsOnMethods = "removeBikeLightInCart")
     public void removeBoltTShirtInCart() {                
         page.removeBoltTShirt();
         assertFalse(page.isRemoveBoltTShirtButtonDisplayed());
     }
 
-    @Test(priority = 9)
+    @Test(dependsOnMethods = "removeBoltTShirtInCart")
     public void emptyCartHasNoBadge() {                    
         assertFalse(page.isCartBadgeDisplayed());
     }
 
-    @Test(priority = 10)
+    @Test(dependsOnMethods = "emptyCartHasNoBadge")
     public void continueShopping() {
         page.clickContinueShopping();
         assertEquals(page.getTitle(), "Products");
     }
 
-    @Test(priority = 11)
+    @Test(dependsOnMethods = "continueShopping")
     public void logout() {
         page.logout();
         assertTrue(page.isLoginButtonDisplayed());
     }
 
-    @Test(priority = 12)
+    @Test(dependsOnMethods = "logout")
     public void productsPageBlockedAfterLogout() {        
         page.openProductsPage();
         assertTrue(page.isErrorDisplayed());
