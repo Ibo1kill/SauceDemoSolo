@@ -19,13 +19,13 @@ public class PurchaseFlowTest extends WorkflowBaseTest {
     }
 
 
-    @Test(dependsOnMethods = "wrongLogin", dataProvider = "wrongLoginData", dataProviderClass = TestData.class)
+    @Test( dataProvider = "wrongLoginData", dataProviderClass = TestData.class)
     public void wrongLogin(String username, String password) {
         page.login(username, password);
         assertTrue(page.isErrorDisplayed());
     }
 
-    @Test(dependsOnMethods = "validLogin" ,dataProvider = "validLoginData", dataProviderClass = TestData.class)
+    @Test(dependsOnMethods = "wrongLogin" ,dataProvider = "validLoginData", dataProviderClass = TestData.class)
     public void validLogin(String username, String password) {
         page.login(username, password);
         assertEquals(page.getTitle(), "Products");
