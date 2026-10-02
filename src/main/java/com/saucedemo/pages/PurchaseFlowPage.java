@@ -32,6 +32,12 @@ public class PurchaseFlowPage extends WorkflowBasepage {
         type(passwordField, password);
         click(loginButton);
     }
+    public void fillCheckout(String firstName, String lastName, String postalCode) {
+        type(firstNameField, firstName);
+        type(lastNameField, lastName);
+        type(postalCodeField, postalCode);
+        click(continueButton);
+    }
 
     public void addToCart(String product) {
         click(By.id("add-to-cart-" + product));
@@ -45,12 +51,7 @@ public class PurchaseFlowPage extends WorkflowBasepage {
         click(checkoutButton);
     }
 
-    public void fillCheckout(String firstName, String lastName, String postalCode) {
-        type(firstNameField, firstName);
-        type(lastNameField, lastName);
-        type(postalCodeField, postalCode);
-        click(continueButton);
-    }
+  
 
     public void clickFinish() {
         click(finishButton);
