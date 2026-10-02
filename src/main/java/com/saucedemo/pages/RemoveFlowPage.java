@@ -16,6 +16,12 @@ public class RemoveFlowPage extends WorkflowBasepage {
     private By continueShoppingButton = By.id("continue-shopping");
     private By menuButton             = By.id("react-burger-menu-btn");
     private By logoutLink             = By.id("logout_sidebar_link");
+    private By addBackpackButton      = By.id("add-to-cart-sauce-labs-backpack");
+    private By addBikeLightButton     = By.id("add-to-cart-sauce-labs-bike-light");
+    private By addBoltTShirtButton    = By.id("add-to-cart-sauce-labs-bolt-t-shirt");
+    private By removeBackpackButton   = By.id("remove-sauce-labs-backpack");
+    private By removeBikeLightButton  = By.id("remove-sauce-labs-bike-light");
+    private By removeBoltTShirtButton = By.id("remove-sauce-labs-bolt-t-shirt");
 
     public RemoveFlowPage(WebDriver driver) {
         super(driver);
@@ -27,14 +33,14 @@ public class RemoveFlowPage extends WorkflowBasepage {
         type(passwordField, password);
         click(loginButton);
     }
+    public void addBackpack()      { click(addBackpackButton); }
+    public void addBikeLight()     { click(addBikeLightButton); }
+    public void addBoltTShirt()    { click(addBoltTShirtButton); }
 
-    public void addToCart(String product) {
-        click(By.id("add-to-cart-" + product));
-    }
-
-    public void removeFromCart(String product) {
-        click(By.id("remove-" + product));
-    }
+    public void removeBackpack()   { click(removeBackpackButton); }
+    public void removeBikeLight()  { click(removeBikeLightButton); }
+    public void removeBoltTShirt() { click(removeBoltTShirtButton); }
+   
 
     public void openCart() {
         click(cartIcon);
@@ -62,14 +68,17 @@ public class RemoveFlowPage extends WorkflowBasepage {
         return isDisplayed(cartBadge);
     }
 
-    public boolean isAddButtonDisplayed(String product) {
-        return waitVisible(By.id("add-to-cart-" + product)).isDisplayed();
+    public boolean isAddBackpackButtonDisplayed() {
+        return waitVisible(addBackpackButton).isDisplayed();
     }
 
-    public boolean isRemoveButtonDisplayed(String product) {
-        return isDisplayed(By.id("remove-" + product));
+    public boolean isRemoveBikeLightButtonDisplayed() {
+        return isDisplayed(removeBikeLightButton);
     }
 
+    public boolean isRemoveBoltTShirtButtonDisplayed() {
+        return isDisplayed(removeBoltTShirtButton);
+    }
     public boolean isLoginButtonDisplayed() {
         return waitVisible(loginButton).isDisplayed();
     }

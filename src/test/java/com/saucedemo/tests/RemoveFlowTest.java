@@ -24,49 +24,68 @@ public class RemoveFlowTest extends WorkflowBaseTest {
         assertEquals(page.getTitle(), "Products");
     }
 
-    @Test(priority = 2, dataProvider = "removeProducts", dataProviderClass = TestData.class)
-    public void addToCart(String product) {
-        page.addToCart(product);
+
+    @Test(priority = 2)
+    public void addBackpack() {
+        page.addBackpack();
         assertTrue(page.isCartBadgeDisplayed());
     }
 
-    @Test(priority = 3, dataProvider = "removeOnProductsPage", dataProviderClass = TestData.class)
-    public void removeOnProductsPage(String product) {
-        page.removeFromCart(product);
-        assertTrue(page.isAddButtonDisplayed(product));
+    @Test(priority = 3)
+    public void addBikeLight() {
+        page.addBikeLight();
+        assertTrue(page.isCartBadgeDisplayed());
     }
 
     @Test(priority = 4)
+    public void addBoltTShirt() {
+        page.addBoltTShirt();
+        assertTrue(page.isCartBadgeDisplayed());
+    }
+
+    @Test(priority = 5)
+    public void removeBackpackOnProductsPage() {
+        page.removeBackpack();
+        assertTrue(page.isAddBackpackButtonDisplayed());
+    }
+
+    @Test(priority = 6)
     public void openCart() {
         page.openCart();
         assertEquals(page.getTitle(), "Your Cart");
     }
 
-    @Test(priority = 5, dataProvider = "removeInCart", dataProviderClass = TestData.class)
-    public void removeInCart(String product) {
-        page.removeFromCart(product);
-        assertFalse(page.isRemoveButtonDisplayed(product));
+    @Test(priority = 7)
+    public void removeBikeLightInCart() {
+        page.removeBikeLight();
+        assertFalse(page.isRemoveBikeLightButtonDisplayed());
     }
 
-    @Test(priority = 6)
-    public void emptyCartHasNoBadge() {                     
+    @Test(priority = 8)
+    public void removeBoltTShirtInCart() {                
+        page.removeBoltTShirt();
+        assertFalse(page.isRemoveBoltTShirtButtonDisplayed());
+    }
+
+    @Test(priority = 9)
+    public void emptyCartHasNoBadge() {                    
         assertFalse(page.isCartBadgeDisplayed());
     }
 
-    @Test(priority = 7)
+    @Test(priority = 10)
     public void continueShopping() {
         page.clickContinueShopping();
         assertEquals(page.getTitle(), "Products");
     }
 
-    @Test(priority = 8)
+    @Test(priority = 11)
     public void logout() {
         page.logout();
         assertTrue(page.isLoginButtonDisplayed());
     }
 
-    @Test(priority = 9)
-    public void productsPageBlockedAfterLogout() {         
+    @Test(priority = 12)
+    public void productsPageBlockedAfterLogout() {        
         page.openProductsPage();
         assertTrue(page.isErrorDisplayed());
     }

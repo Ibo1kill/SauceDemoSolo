@@ -13,13 +13,15 @@ public class PurchaseFlowPage extends WorkflowBasepage {
     private By pageTitle       = By.xpath("//span[@class='title']");
     private By cartBadge       = By.xpath("//span[@class='shopping_cart_badge']");
     private By cartIcon        = By.xpath("//a[@data-test='shopping-cart-link']");
+    private By addBackpackButton = By.id("add-to-cart-sauce-labs-backpack");
+    private By addBikeLightButton = By.id("add-to-cart-sauce-labs-bike-light");
     private By checkoutButton  = By.id("checkout");
     private By firstNameField  = By.id("first-name");
     private By lastNameField   = By.id("last-name");
     private By postalCodeField = By.id("postal-code");
     private By continueButton  = By.id("continue");
     private By finishButton    = By.id("finish");
-    private By thankYouMessage = By.cssSelector("[data-test='complete-header']");
+    private By thankYouMessage = By.xpath("//h2[@class='complete-header']");
     private By backHomeButton  = By.id("back-to-products");
 
     public PurchaseFlowPage(WebDriver driver) {
@@ -39,10 +41,13 @@ public class PurchaseFlowPage extends WorkflowBasepage {
         click(continueButton);
     }
 
-    public void addToCart(String product) {
-        click(By.id("add-to-cart-" + product));
+    public void addBackpack() {
+        click(addBackpackButton);
     }
 
+    public void addBikeLight() {
+        click(addBikeLightButton);
+    }
     public void openCart() {
         click(cartIcon);
     }
