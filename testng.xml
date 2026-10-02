@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SauceDemo Solo Suite">
+
+    <test name="Workflow 1 - Purchase">
+        <classes>
+            <class name="com.saucedemo.tests.PurchaseFlowTest"/>
+        </classes>
+    </test>
+
+    <test name="Workflow 2 - Remove and Logout">
+        <classes>
+            <class name="com.saucedemo.tests.RemoveFlowTest"/>
+        </classes>
+    </test>
+
+</suite>
